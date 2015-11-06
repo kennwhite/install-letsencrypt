@@ -28,9 +28,9 @@ As indicated in each script, if you get stuck, it's perfectly ok to tear down, r
 
 There are three non-official alternative LE clients, and they work pretty well: 
 
-https://github.com/unixcharles/acme-client (a Ruby gem)
-https://github.com/xenolf/lego (a single cross-platform Go program)  
-https://github.com/diafygi/letsencrypt-nosudo (as the name suggests, a non-sudo alternative—a single python script)
+https://github.com/unixcharles/acme-client (a Ruby gem)   
+https://github.com/xenolf/lego (a single cross-platform Go program)   
+https://github.com/diafygi/letsencrypt-nosudo (as the name suggests, a non-sudo alternative—a single python script)   
 
 I tried each, and was able to generate certs quite easily with both Lego and LE-nosudo. Might be worth checking out.
 
