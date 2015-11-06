@@ -1,6 +1,6 @@
 ## LetsEncrypt Client Installers
 
-### A Suite of simple install scripts for the LetsEncrypt official certificate client on most major *nix OS (Debian, AWS, CentOS, RedHat, FreeBSD) 
+### A suite of simple install scripts for the LetsEncrypt official certificate client on most major *nix OS (Debian, AWS, CentOS, RedHat, FreeBSD) 
 
 This is a minimal, repeatable set of scripts to stand up the official [Let's Encrypt](https://letsencrypt.org/)
 certificate management [ACME client tool](https://github.com/letsencrypt/letsencrypt). Let's Encrypt is a really important
