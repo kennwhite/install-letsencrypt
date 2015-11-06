@@ -5,7 +5,7 @@
 # If you get stuck, just try again:
 #  cd ~/ && rm -rf ./letsencrypt && rm -rf ~/.local/share/letsencrypt && rm -rf /etc/letsencrypt && rm -rf ~/.cache/pip
 #
-# Usage (as root; note the leading space): . ./Debian7Wheezy.sh
+# Usage (as root; note the leading space): . ./FreeBSD10.sh
 
 # Set this to your domain for certificate
 

@@ -23,7 +23,7 @@ yum update -y -q
 
 # The LE installer OS autodetect doesn't recognize Amazon Linux, so we have to manually pre-install required buildpkgs
 
-yum install -y -q augeas-libs ca-certificates dialog epel-release gcc git libffi-devel openssl-devel python27-pip python27-python-devel 
+yum install -y -q augeas-libs dialog epel-release gcc git libffi-devel openssl-devel python27-pip python27-python-devel python27-virtualenv
 
 git clone https://github.com/letsencrypt/letsencrypt
 
