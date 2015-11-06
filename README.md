@@ -11,7 +11,10 @@ detect your operating system and build environment, it can be fragile and error-
 some systems, particularly popular distros like Amazon Linux and older versions of CentOS
 or RedHat.
 
-After a few false starts, I was eventually able to reliably request and receive certificates on Debian and CentOS on GCE and AWS, and achieve an A+ rating with [SSLLabs' test suite](https://www.ssllabs.com/ssltest/index.html) and _you can too_. Woot!
+This started because, after a few false starts, I was eventually able to reliably request and receive certificates on Debian and CentOS on GCE and AWS, and achieve an A+ rating with
+[SSLLabs' test suite](https://www.ssllabs.com/ssltest/index.html). Woot!
+These scripts are a cleanup and drastic simplification of that work (many dozens of VMs later). My message is: _you too_ can painlessly [generate certs](https://community.letsencrypt.org/t/beta-program-announcements/1631) for your systems.
+
 
 ### Abbreviated advice from the front line
 
