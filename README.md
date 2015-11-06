@@ -22,7 +22,8 @@ These scripts are a cleanup and drastic simplification of that work (many dozens
 *  Do __not__ run either these scripts or the client on production systems (yet). LE is still in beta and has some rough edges, including silently invoking sudo and installing [quite a few](#dependencies) development packages. __Please__ study the script for your platform. These were written quickly to help other people hopefully avoid some of the stumbling blocks I hit, and to expand the pool of testing volunteers.
 *  The Apache and Nginx plugins to autoupdate are very much still works-in-progress. I encourage anyone to help improve them by testing & documenting your results. Constructive feedback is welcome!
 *  Because Nginx in particular is still classified as highly experimental, I recommend spinning up a test VM (micro instances on GCE or AWS work great), and using the LE client as a certificate fetcher, pushing certs and keys to target servers via ssh.
-*  Be patient during the build, because there may be long pauses that are preceded by unrelated warning messages.
+*  Be patient during the build, because there may be long pauses (multi-minute on micro VMs) that are preceded by unrelated warning messages. If you're running on a platforms that ships with Python v 2.6 (wheezy, Cent6, Amazon Linux), be aware that there are some [core limits](#urllib3) on the underlying library around TLS, but workarounds are in place during the "bootstrap" process of standing up the client, and additional 2.6 support is being added by the LE team.
+
 
 As indicated in each script, if you get stuck, it's perfectly ok to tear down, rebuild, and try again, just make sure to run the following clean up to remove python and build fragments:
 
@@ -121,4 +122,21 @@ servers, and the installer dependencies are all self-contained packages.
     python3.4-minimal
     virtualenv
     zlib1g-dev
+
+
+#### <a name="urllib3">SSLContext warning from python urllib3
+
+You may get this warning if you're running on a platform with python 2.6 (Wheezy, Cent6, Amazon Linux):
+
+> InsecurePlatformWarning: A true SSLContext object is not available.
+> This prevents urllib3 from configuring SSL appropriately and may cause
+> certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+
+The bootstrap processes attempt to handle multiple libraries through python virtual environments,
+but on some OS', the only solution at the moment is to run a parallel library manager that
+(attempts) to not step over the core system dependencies for yum and apt.
+
+For this suite of scripts I managed to avoid that in all cases but Debian Wheezy, which required
+[pyenv](https://github.com/yyuu/pyenv), which offers a lot of benefits, but brings with
+it additional package and environment variable dependencies.
 
