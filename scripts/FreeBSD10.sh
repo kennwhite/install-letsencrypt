@@ -18,8 +18,6 @@ if ( ping -c 1 `hostname`| grep -q ec2.internal ) then
   grep 'ec2' /usr/local/etc/sudoers || su - root -c 'echo "ec2-user ALL=(ALL) NOPASSWD: ALL" >> /usr/local/etc/sudoers'
 fi
 
-mkdir letsencrypt
-cd letsencrypt
 ./letsencrypt-auto --agree-dev-preview -d $DOMAIN --authenticator manual certonly
 
 # For trusted cert (currently Beta testers only):
