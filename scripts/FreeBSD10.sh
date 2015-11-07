@@ -11,14 +11,14 @@
 
 export DOMAIN=www.EXAMPLE.org
 
-su - root -c 'pkg install -y git sudo'
+su - root -c 'pkg install -y py-letsencrypt sudo'
 
 # If on AWS, add ec2-user to sudoers if not present (yes, it's a hack)
 if ( ping -c 1 `hostname`| grep -q ec2.internal ) then
   grep 'ec2' /usr/local/etc/sudoers || su - root -c 'echo "ec2-user ALL=(ALL) NOPASSWD: ALL" >> /usr/local/etc/sudoers'
 fi
 
-git clone https://github.com/letsencrypt/letsencrypt
+mkdir letsencrypt
 cd letsencrypt
 ./letsencrypt-auto --agree-dev-preview -d $DOMAIN --authenticator manual certonly
 
