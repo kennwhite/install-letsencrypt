@@ -1,6 +1,6 @@
 ## LetsEncrypt Client Installers
 
-### A suite of simple install scripts for the LetsEncrypt official certificate client on most major *nix OS (Debian, AWS, CentOS, RedHat, FreeBSD) 
+A suite of simple install scripts for the LetsEncrypt official certificate client on most major *nix OS (Debian, AWS, CentOS, RedHat, Ubuntu FreeBSD) 
 
 This is a minimal, repeatable set of scripts to stand up the official [Let's Encrypt](https://letsencrypt.org/)
 certificate management [ACME client tool](https://github.com/letsencrypt/letsencrypt). Let's Encrypt is a really important
@@ -11,7 +11,7 @@ detect your operating system and build environment, it can be fragile and error-
 some systems, particularly popular distros like Amazon Linux and older versions of CentOS
 or RedHat.
 
-This started because, after a few false starts, I was eventually able to reliably request and receive certificates on Debian and CentOS on GCE and AWS, and achieve an A+ rating with
+This started because of so many false starts for me when trying to use the beta client. I was eventually able to reliably request and receive certificates on Debian and CentOS on GCE and AWS, and achieve an A+ rating with
 [SSLLabs' test suite](https://www.ssllabs.com/ssltest/index.html). Woot!
 These scripts are a cleanup and drastic simplification of that work (many dozens of VMs later). My message is: _you too_ can painlessly [generate certs](https://community.letsencrypt.org/t/beta-program-announcements/1631) for your systems.
 
@@ -139,4 +139,13 @@ but on some OS', the only solution at the moment is to run a parallel library ma
 For this suite of scripts I managed to avoid that in all cases but Debian Wheezy, which required
 [pyenv](https://github.com/yyuu/pyenv), which offers a lot of benefits, but brings with
 it additional package and environment variable dependencies.
+
+#### Acknowledgements
+
+Big shout out to Kubilay Kocak (@koobs) and Bernard Spil (@Sp1l) on getting LetsEncrypt packaged on FreeBSD, and to Jacob Hoffman-Andrews (@j4cob) from @letsencrypt on his support and suggestions.
+
+#### Contact 
+
+Ping me @kennwhite with questions. Have fun!
+
 
