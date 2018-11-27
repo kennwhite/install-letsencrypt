@@ -1,3 +1,6 @@
+## Note: This project has been archived. I recommend using the official CertBot or Lego now (https://certbot.eff.org/ or https://github.com/xenolf/lego)
+_________________
+
 ## LetsEncrypt Client Installers
 
 A suite of simple install scripts for the LetsEncrypt official certificate client on most major *nix OS (Debian, AWS, CentOS, RedHat, Ubuntu, and FreeBSD) 
